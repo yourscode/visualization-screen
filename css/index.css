@@ -97,26 +97,31 @@
   .left_two {
     width: 100%;
     height: 45%;
-    background-color: yellow;
+    /* background-color: yellow; */
     display: flex;
   }
 .left_two .left_two_left , .left_two .left_two_right{
   width: 50%;
 }
+.left_two .two_left_c, .two_right_c{
+  height: 100%
+}
   .left_three {
     width: 100%;
     height: 25%;
-    background-color: aqua;
+    display: flex;
+    /* background-color: aqua; */
   }
-  .left_three .left_threec{
-    background-color: #091437;
-    margin-left: 8%;
-    width: 82%;
-    height: 80%;
+  .left_three .left_three_left , .left_three .left_three_right{
+    width: 50%;
+    height: 100%;
+  }
+  .left_three .three_left_c,.left_three .three_right_c{
+    height: 100%
   }
   .left {
     width: 26%;
-    background-color: rgba(20, 231, 247, 0.5);
+    /* background-color: rgba(20, 231, 247, 0.5); */
   }
   .center {
     width: 48%;
@@ -126,20 +131,24 @@
     widows: 100%;
     height: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
   }
   .center_one {
-    width: 100%;
-    height: 30%;
+    width: 15%;
+    height: 100%;
+    background-color: #081d4e;
+  }
+  
+  .center_two {
+    width: 70%;
+    height: 100%;
     background-color: gold;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
   }
 
-  .center_two {
-    width: 100%;
-    height: 70%;
+  .center_three {
+    width: 15%;
+    height: 100%;
     background-color: #081d4e;
   }
   .right {
