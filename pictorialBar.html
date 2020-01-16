@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="pictorialBar" style="width: 600px; height: 400px; left: 0px; background: blue;">
+    </div>
+
+    <script src="./js/echarts.js"></script>
+<script>
+    var myChart_pictorialBar = echarts.init(document.getElementById("pictorialBar"));
+    var myData = ['刑事', '治安', '交通', '求助', '纠纷']
+    var lineData = [100, 100, 100, 100, 100]
+    var lastYearData = {
+        1: [3, 20, 62, 34, 55, 65, 33]
+    }
+    var thisYearData = {
+        1: [11, 38, 23, 39, 66]
+    }
+    var timeLineData = [1]
+    var background = "transparent"; //背景 
+
+    var option = {
+        baseOption: {
+            backgroundColor: background,
+            timeline: {
+                show: false,
+                top: 0,
+                data: []
+            },
+            legend : {
+                top : '5%',
+                left : '31%',
+                show : false,
+                itemWidth : 22,
+                itemHeight : 22,
+                itemGap: 343,
+                icon : 'horizontal',
+                textStyle : {
+                    color : '#ffffff',
+                    fontSize : 14,
+                },
+                data: ['2017', '2018']
+            },
+            grid: [{
+                show: false,
+                left: '5%',
+                top: '10%',
+                bottom: '8%',
+                containLabel: true,
+                width: '37%'
+            }, {
+                show: false,
+                left: '51%',
+                top: '10%',
+                bottom: '8%',
+                width: '0%'
+            }, {
+                show: false,
+                right: '2%',
+                top: '10%',
+                bottom: '8%',
+                containLabel: true,
+                width: '37%'
+            }],
+            xAxis: [{
+                type: 'value',
+                inverse: true,
+                axisLine: {
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                },
+                position: 'top',
+                axisLabel: {
+                    show: false
+                },
+                splitLine: {
+                    show: false
+                }
+            }, {
+                gridIndex: 1,
+                show: false
+            }, {
+                gridIndex: 2,
+                axisLine: {
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                },
+                position: 'top',
+                axisLabel: {
+                    show: false
+                },
+                splitLine: {
+                    show: false
+                }
+            }],
+            yAxis: [{
+                type: 'category',
+                inverse: true,
+                position: 'right',
+                axisLine: {
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                },
+                axisLabel: {
+                    show: false
+                },
+                data: myData
+            }, {
+                gridIndex: 1,
+                type: 'category',
+                inverse: true,
+                position: 'left',
+                axisLine: {
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                },
+                axisLabel: {
+                    show: true,
+                    textStyle: {
+                        color: '#ffffff',
+                        fontSize: 14
+                    }
+
+                },
+                data: myData.map(function(value) {
+                    return {
+                        value: value,
+                        textStyle: {
+                            align: 'center'
+                        }
+                    }
+                })
+            }, {
+                gridIndex: 2,
+                type: 'category',
+                inverse: true,
+                position: 'left',
+                axisLine: {
+                    show: false
+                },
+                axisTick: {
+                    show: false
+                },
+                axisLabel: {
+                    show: false
+
+                },
+                data: myData
+            }],
+            series: []
+
+        },
+        options: []
+    }
+
+    option.baseOption.timeline.data.push(timeLineData[0])
+    option.options.push({
+        series: [
+        {
+            type: 'pictorialBar',
+            xAxisIndex: 0,
+            yAxisIndex: 0,
+            symbol: 'rect',
+            itemStyle: {
+                normal: {
+                    color: 'rgba(3,147,114,0.27)'
+                }
+            },
+            barWidth: 10,
+            symbolRepeat: true,
+            symbolSize: 0,
+            data: lineData,
+            barGap: '-100%',
+            barCategoryGap: 0,
+            // label: {
+            //     normal: {
+            //         show: true,
+            //         formatter: (series) => {
+            //             return lastYearData[timeLineData[0]][series.dataIndex] + '%'
+            //         },
+            //         position: 'insideTopLeft',
+            //         textStyle:{
+            //             color: '#ffffff',
+            //             fontSize: 14,
+            //         },
+            //         offset: [0, -35],
+            //     }
+            // },
+            z: -100,
+                animationEasing: 'elasticOut',
+                 animationDelay: function (dataIndex, params) {
+                return params.index * 30;
+            }
+        }, {
+            name: '2017',
+            type: 'pictorialBar',
+            xAxisIndex: 0,
+            yAxisIndex: 0,
+            symbol: 'rect',
+            barWidth: 10,
+            itemStyle: {
+                normal: {
+                    barBorderRadius: 5,
+                    color: '#039372'
+                }
+            },
+            symbolRepeat: true,
+            symbolSize: 14,
+            // data: lastYearData[timeLineData[0]],
+            animationEasing: 'elasticOut',
+            animationDelay: function (dataIndex, params) {
+                return params.index * 30 * 1.1;
+            }
+        },
+        {
+            type: 'pictorialBar',
+            xAxisIndex: 2,
+            yAxisIndex: 2,
+            symbol: 'rect',
+            itemStyle: {
+                normal: {
+                    color: 'rgba(54,215,182,0.27)'
+                }
+            },
+            barWidth: 10,
+            symbolRepeat: true,
+            symbolSize: 14,
+            data: lineData,
+            barGap: '-100%',
+            barCategoryGap: 0,
+            label: {
+                normal: {
+                    show: true,
+                    formatter: (series) => {
+                        return thisYearData[timeLineData[0]][series.dataIndex] + '%'
+                    },
+                    position: 'insideTopRight',
+                    textStyle:{
+                        color: '#ffffff',
+                        fontSize: 14,
+                    },
+                    offset: [0, -25],
+                }
+            },
+            z: -100,
+                animationEasing: 'elasticOut',
+                 animationDelay: function (dataIndex, params) {
+                return params.index * 30;
+            }
+        }, {
+            name: '2018',
+            type: 'pictorialBar',
+            xAxisIndex: 2,
+            yAxisIndex: 2,
+            symbol: 'rect',
+            barWidth: 10,
+            itemStyle: {
+                normal: {
+                    barBorderRadius: 5,
+                    color: '#36d7b6'
+                }
+            },
+            symbolRepeat: true,
+            symbolSize: 14,
+            data: thisYearData[timeLineData[0]],
+            animationEasing: 'elasticOut',
+            animationDelay: function (dataIndex, params) {
+                return params.index * 30 * 1.1;
+            }
+        }
+        ]
+    });
+    myChart_pictorialBar.setOption(option)
+</script>
+</body>
+</html>
