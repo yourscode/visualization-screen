@@ -85,7 +85,7 @@
   .left_one {
     width: 100%;
     height: 30%;
-    background-color: blue;
+    /* background-color: blue; */
     display: flex;
   }
   .left_one .left_one_left, .left_one .left_one_right{
@@ -110,7 +110,83 @@
     height: 90%;
     width: 100%;
   }
-  
+  .left_one .alarm{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .left_one .alarm .top{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+  .left_one .alarm .top label{
+    width: 20%;
+    /* height: auto; */
+    text-align: center;
+    border: 1px solid rgb(0, 235, 0);
+    color: rgb(red, green, blue);
+  }
+  .left_one .alarm .center{
+    height: 40%;
+    width: 100%;
+    text-align: center;
+  }
+  .left_one .alarm .center>.alarmall{
+    margin-top: 16%;
+    font-size: .14rem;
+  }
+  .left_one .alarm .center .alarmnum{
+    font-size: .30rem;
+    color: rgb(76, 243, 10);
+  }
+  .left_one .alarm .bottom{
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .alarm .bottom .leftangel{
+    width: 45%;
+    height: 100%;
+    background: url('../img/矩形929.png') no-repeat;
+    background-size: cover;
+  }
+  .alarm .bottom .rightangel{
+    width: 45%;
+    height: 100%;
+    background: url('../img/圆角矩形6.png') no-repeat;
+    background-size: cover;
+  }
+  .left_one .handle{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .left_one .handle .item{
+    width: 50%;
+    height: 50%;
+    display: flex;
+  }
+  .left_one .handle .item .picture{
+    width: 50%;
+    height: 50%;
+  }
+  .left_one .handle .item .picture img{
+    width: 60%;
+    height: auto;
+  }
+  .left_one .handle .item .substance .top{
+      color: springgreen;
+      font-size: .2rem;
+  }
+  .left_one .handle .item .substance .between{
+    color: #ccc;
+    font-size: .2rem;
+}
   .left_two {
     width: 100%;
     height: 45%;
@@ -162,7 +238,7 @@
   }
   .center {
     width: 48%;
-    background-color: rgba(45, 15, 218, 0.5);
+    /* background-color: rgba(45, 15, 218, 0.5); */
   }
   .center .center_content {
     widows: 100%;
@@ -235,7 +311,7 @@
     display: flex;
   }
   .right_two .right_two_left, .right_two .right_two_right{
-    width: 50%;
+    width: 100%;
     height: 100%;
     display: flex;
     justify-content: space-between;
@@ -244,10 +320,33 @@
     height: 100%;
     width: 100%;
   }
+  .right_two .prepare{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+  .right_two .prepare .item{
+    width: 25%;
+    height: 100%;
+  }
+  .right_two .prepare .item .num{
+    font-size: .35rem;
+    color: #ffffff;
+  }
+  .right_two .prepare .item .picture{
+    width: 100%;
+    height: 70%;
+    margin-top: 5%;
+  }
+  .right_two .prepare .item .picture img{
+    width: 100%;
+    height: 70%;
+  }
   .right_three {
     width: 100%;
     height: 50%;
-    background-color: peru;
+    /* background-color: peru; */
   }
   .right_three .right_three_left{
     width: 100%;
