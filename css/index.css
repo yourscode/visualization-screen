@@ -182,20 +182,30 @@
     width: 100%;
     height: 15%;
     /* background-color: black; */
+    display: flex;
   }
-  .right_two .right_twoc{
-    width: 90%;
-    height: 80%;
-    background-color: #091437;
+  .right_two .right_two_left, .right_two .right_two_right{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .right_two_left .two_left_c,.right_two_right .two_right_c{
+    height: 100%;
+    width: 100%;
   }
   .right_three {
     width: 100%;
     height: 50%;
     background-color: peru;
   }
-  .right_threec {
+  .right_three .right_three_left{
+    width: 100%;
+    height: 100%;
     display: flex;
-    width: 90%;
-    height: 80%;
-    background-color: #091437;
+    justify-content: space-between;
+  }
+  .right_three_left .three_left_c{
+    height: 100%;
+    width: 100%;
   }
